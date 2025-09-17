@@ -14,19 +14,21 @@
     font-size: 1rem;
 }
 
+@media (min-width: 1800px) {
+    .container {
+        width: 1650px !important;
+        max-width: 1650px !important;
+    }
+}
+
+.text-primary {
+    color: #6F77F1 !important;
+}
 
 $red: #e74c3c;
 $active-link-color: #8f9bff;
 $text-color: #212529;
-$search-btn-bg: #ffd600;
-
-.dot {
-    width: 8px;
-    height: 8px;
-    background-color: $red;
-    border-radius: 50%;
-    display: inline-block;
-}
+$search-btn-bg: #FAD725;
 
 .nav-link {
     color: $text-color;
@@ -40,20 +42,41 @@ $search-btn-bg: #ffd600;
     }
 }
 
+
+a {
+    @media (min-width: 1000px) {
+        font-size: 24px !important;
+    }
+}
+
+.all-btn {
+    background-color: $search-btn-bg;
+}
+
+.blue-btn {
+    background-color: #6F77F1;
+}
+
 .search-btn {
     width: 40px;
     height: 40px;
+
+    @media (min-width: 1000px) {
+        width: 65px;
+        height: 65px;
+    }
+
     background-color: $search-btn-bg;
     display: flex;
     align-items: center;
     justify-content: center;
 
     img {
-        width: 80%;
+        width: 70%;
     }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1100.98px) {
     .navbar-collapse {
         margin-top: 1rem;
     }
@@ -64,7 +87,7 @@ $search-btn-bg: #ffd600;
 }
 
 $yellow: #ffd600;
-$text-muted: #727272;
+$text-muted: #828282;
 $font-primary: 'Poppins', sans-serif;
 $avatar-size: 36px;
 
@@ -83,9 +106,13 @@ $avatar-size: 36px;
             font-size: 3rem;
         }
 
-        @media (min-width: 800px) {
+        @media (min-width: 1200px) {
             font-size: 4.5rem;
         }
+
+                @media (min-width: 1500px) {
+                    font-size: 5.5rem;
+                }
 
         .expert-tag {
             display: inline-block;
@@ -172,8 +199,8 @@ $avatar-size: 36px;
         }
 
         .team-avatar {
-            width: $avatar-size;
-            height: $avatar-size;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: -10px;
@@ -214,8 +241,8 @@ $avatar-size: 36px;
             object-fit: contain;
 
             @media (min-width: 1000px) {
-                width: 95px;
-                height: 95px;
+                width: 125px;
+                height: 125px;
             }
         }
 
@@ -226,7 +253,11 @@ $avatar-size: 36px;
                 font-size: 2rem;
             }
 
-            line-height: 1.2;
+            @media (min-width: 1500px) {
+                font-size: 2.5rem;
+            }
+
+            line-height: 1.5;
             align-self: center;
         }
 
@@ -282,7 +313,7 @@ $card-border-radius: 1px;
         font-size: 1.5rem;
     }
 
-    @media (max-width: 1000px) {
+    @media (min-width: 700px) and (max-width: 1000px) {
         font-size: 2rem;
     }
 }
@@ -303,46 +334,70 @@ $card-border-radius: 1px;
     transition: transform 0.3s ease;
 
     &:hover {
-        // transform: translateY(-5px);
+        box-shadow: 0px 10px 14px 2px #0E113C08;
         border-bottom: darkblue 4px solid;
     }
+}
 
-    .icon-container {
-        width: 100%;
-        border-radius: 50%;
-        display: flex;
-        margin: 20px 0;
+.icon-card {
+    padding: 10px 30px;
+    transition: transform 0.3s ease;
 
-        img {
-            max-width: 100%;
-            height: auto;
-
-            @media (max-width: 1000px) {
-                width: 60%;
-            }
-        }
-
-        .bg-img {
-            @media (max-width: 1000px) {
-                display: none;
-            }
-        }
+    &:hover {
+        box-shadow: 0px 34px 50px -17px #0216051A;
     }
 
-    &.highlighted-card {
-        border-bottom: darkblue 4px solid;
+}
+
+.plan-card {
+    padding: 20px 10px;
+    transition: transform 0.6s ease;
+    background: white;
+
+    @media (min-width: 700px) {
+        padding: 40px 20px;
+    }
+
+    .top-title {
+        font-size: 20px;
+        color: #6F77F1;
+
+    }
+
+    &:hover {
+        background: url('../assets/images/Mask group.png') no-repeat center #6068df;
+        transform: scale(1.05);
+
+        .top-title {
+            color: white;
+        }
+
+        .feature-title {
+            color: white;
+        }
+
+        .feature-description {
+            color: white;
+        }
+
+        a {
+            background: #FAD725;
+        }
     }
 
     .feature-title {
-        font-size: 24px;
+        font-size: 48px;
 
         @media (max-width: 1000px) {
-            font-size: 18px;
+            font-size: 24px;
         }
 
         font-weight: 500;
         color: #333;
-        margin-bottom: 10px;
+
+        &:hover {
+            color: white;
+        }
     }
 
     .feature-description {
@@ -352,14 +407,74 @@ $card-border-radius: 1px;
             font-size: 15px;
         }
 
+        font-weight: 300;
+        margin-bottom: 8px;
         color: $text-muted;
+
+        &:hover {
+            color: white;
+        }
     }
+}
+
+.icon-container {
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    margin: 20px 0;
+
+    img {
+        max-width: 100%;
+        height: auto;
+
+        @media (max-width: 1000px) {
+            width: 75%;
+        }
+    }
+
+    .icon {
+        max-width: 100%;
+        height: auto;
+
+        @media (max-width: 1000px) {
+            width: 60px;
+        }
+    }
+
+    .bg-img {
+        @media (max-width: 1000px) {
+            display: none;
+        }
+    }
+}
+
+.feature-title {
+    font-size: 24px;
+
+    @media (max-width: 1000px) {
+        font-size: 18px;
+    }
+
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-description {
+    font-size: 17px;
+
+    @media (max-width: 1000px) {
+        font-size: 15px;
+    }
+
+    color: $text-muted;
 }
 
 .feature-card-high {
     background: url('../assets/images/Mask\ group.png') no-repeat center;
 
     &:hover {
+        background: url('../assets/images/Mask\ group.png') no-repeat center;
         transform: scale(1.1);
     }
 }
@@ -389,20 +504,21 @@ $card-border-radius: 1px;
             font-size: 1.5rem;
         }
 
-        @media (max-width: 1000px) {
+        @media (min-width: 700px) and (max-width: 1000px) {
             font-size: 2rem;
         }
     }
-        .p {
-            font-size: 20px;
-    
-            @media (max-width: 700px) {
-                font-size: 15px;
-            }
-    
-            color: $text-muted;
-            margin-bottom: 3rem;
+
+    p {
+        font-size: 20px;
+
+        @media (max-width: 700px) {
+            font-size: 15px;
         }
+
+        color: #828282;
+        margin-bottom: 3rem;
+    }
 
     .hero-image {
         max-width: 100%;
@@ -445,13 +561,10 @@ $seo-optimization-bg: #fcf8e3; // Light yellow
 }
 
 .marketing-card {
-    background-color: $card-bg;
-    border-radius: $card-border-radius;
-    box-shadow: $card-box-shadow;
     transition: transform 0.2s ease-in-out;
 
     &:hover {
-        transform: translateY(-5px);
+        box-shadow: 5px 25px 37px 0px #0216050F;
     }
 
     @media (max-width: 400px) {
@@ -465,7 +578,16 @@ $seo-optimization-bg: #fcf8e3; // Light yellow
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+
     // padding: 0px 50px;
+    img {
+        max-width: 100px;
+        height: auto;
+
+        @media (max-width: 1000px) {
+            width: 75px;
+        }
+    }
 
     @media (max-width: 700px) {
         margin-bottom: 20px;
@@ -487,32 +609,39 @@ $seo-optimization-bg: #fcf8e3; // Light yellow
 .stats-section {
     .brdr {
         border: 0;
-        @media (min-width:700px){
-        border: $text-muted 1px solid;
-        border-radius: 1px;
+
+        @media (min-width:700px) {
+            border: lightgray 1px solid;
+            border-radius: 1px;
         }
     }
 
     .stat-box {
         h2 {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 4rem;
+            font-weight: 600;
             margin: 0;
-            @media (max-width: 1000px)
-            {
-                font-size: 3rem;
+
+            @media (max-width: 1000px) {
+                font-size: 2rem;
             }
+
+            color: #666565;
         }
 
         p {
             font-size: 1rem;
             color: $text-muted;
+
+            @media (min-width: 1400px) {
+                white-space: nowrap;
+            }
         }
     }
 
     .dot {
-        width: 8px;
-        height: 8px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
         margin: 0px 0px;
         padding: 0;
@@ -628,8 +757,8 @@ $animation-duration: 30s;
 .testimonial-card {
     background: url('../assets/images/“.png') no-repeat;
     border-radius: $border-radius;
-    padding: 30px 25px;
-    width: 350px;
+    padding: 50px;
+    width: 550px;
     flex-shrink: 0;
     @include card-shadow;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -647,8 +776,8 @@ $animation-duration: 30s;
     }
 
     .testimonial-text {
-        color: $text-dark;
-        font-size: 14px;
+        font-size: 16px;
+        color: #828282;
         line-height: 1.6;
         margin-bottom: 25px;
         text-align: center;
@@ -710,6 +839,7 @@ $animation-duration: 30s;
 
         &.active {
             background-color: rgba(0, 0, 255, 0.8);
+            transform: scale(1.3);
         }
     }
 }
@@ -734,7 +864,8 @@ $animation-duration: 30s;
         padding: 25px 20px;
 
         .testimonial-text {
-            font-size: 13px;
+            font-size: 16px;
+            color: #828282;
         }
     }
 
@@ -761,5 +892,44 @@ $animation-duration: 30s;
         .testimonials-title {
             font-size: 28px;
         }
+    }
+}
+
+.team-card {
+    padding: 30px;
+    transition: transform 0.3s ease;
+    border: 1px solid #EFEFEF;
+
+    &:hover {
+        border: 0;
+        box-shadow: 0px 34px 50px -17px #0216051A;
+
+        .feature-title {
+            color: #6F77F1;
+        }
+
+                .social-icon:hover {
+                    filter: brightness(0) saturate(100%) invert(53%) sepia(59%) saturate(4851%) hue-rotate(223deg) brightness(100%) contrast(95%);
+                }
+    }
+
+    .feature-title {
+        font-size: 22px;
+
+        @media (max-width: 1000px) {
+            font-size: 16px;
+        }
+
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 4px;
+    }
+
+    .feature-description {
+        font-size: 15px;
+
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #A3A2A2;
     }
 }
