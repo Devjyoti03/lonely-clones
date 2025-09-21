@@ -1442,23 +1442,12 @@
             <p class="section-subtitle text-center">
               Enter your email and get updated new products & news.
             </p>
-            <form
-              class="d-flex flex-column flex-md-row gap-3 justify-content-center"
-            >
-              <input
-                type="url"
-                class="form-control custom-font-size py-lg-3 rounded-0 max-w-400"
-                placeholder="    Name"
-              />
-              <input
-                type="email"
-                class="form-control custom-font-size py-lg-3 rounded-0 max-w-400"
-                placeholder="    Email Address"
-              />
-              <button
-                type="submit"
-                class="btn rounded-1 px-3 px-lg-5 py-lg-3 btn-lg btn-primary text-white blue-btn"
-              >
+            <form id="subscriptionForm" class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+              <input type="text" name="name" id="userName" class="form-control custom-font-size py-lg-3 rounded-0 max-w-400"
+                placeholder="    Name" required />
+              <input type="email" name="email" id="userEmail" class="form-control custom-font-size py-lg-3 rounded-0 max-w-400"
+                placeholder="    Email Address" required />
+              <button type="submit" class="btn rounded-1 px-3 px-lg-5 py-lg-3 btn-lg btn-primary text-white blue-btn">
                 Subscribe
               </button>
             </form>
